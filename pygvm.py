@@ -15,9 +15,9 @@ DEFAULT_CONFIG_NAME = "Full and fast"
 DEFAULT_FORMAT_NAME = "TXT"
 
 class Pygvm:
-    def __init__(self, gmp:Gmp):
+    def __init__(self, gmp:Gmp, username, passwd):
         self.gmp = gmp
-        self.gmp.authenticate('admin','cnic.cn')
+        self.gmp.authenticate(username, passwd)
     
     def _command(self, resp, cb=None) -> Response:
         response = Response(resp=resp, cb=cb)
